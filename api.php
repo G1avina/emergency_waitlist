@@ -1,4 +1,5 @@
 <?php
+require_once('database.php');
 
 switch ($_GET["action"] ?? "version") {
 case "test":
@@ -7,7 +8,21 @@ case "test":
   // Decode the JSON data into a PHP array
   $data_array = json_decode($json_data, true);
 
-    $data = ["answer" => "smt"];
+    $data ["answer"] = ["smt"];
+
+
+    //database test
+    $result = pg_query($conn, "SELECT * FROM test");
+
+    // Fetch and display the results
+    $i = 1;
+    while ($row = pg_fetch_assoc($result)) {
+        $data["Column$i"] = [$row["name"]];
+        $i++;
+    }
+
+    // Free result set
+    pg_free_result($result);
 
 
 break;
