@@ -1,0 +1,47 @@
+This is where I store the database tables and data for the app
+
+Test table used only for testing purposes
+
+CREATE TABLE test (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50),
+    age int
+);
+
+ALTER TABLE test
+ADD COLUMN password VARCHAR(50);
+
+INSERT INTO test (name,age) 
+VALUES
+    ('John',30),
+    ('cedric',21),
+    ('vincent',23),
+    ('test',100);
+
+UPDATE test
+SET password = 'password';
+
+
+
+
+
+
+CREATE TABLE admin (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50),
+    age int
+);
+
+
+CREATE TABLE patient (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50),
+    age int
+);
+
+
+CREATE TABLE registerd (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50),
+    age int
+);
