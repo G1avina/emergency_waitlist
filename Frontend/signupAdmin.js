@@ -1,50 +1,11 @@
-
-
-function clickTest() {
-    //json data for roll
-    let jsonData = {
-        request: "smt"
-    };
-   
-    const xmlhttp = new XMLHttpRequest();
-  
-    xmlhttp.onreadystatechange = function() {
-        if (xmlhttp.readyState == XMLHttpRequest.DONE) {
-            if (xmlhttp.status == 200) {
-                console.log(xmlhttp.responseText);
-                var jsonResponse = JSON.parse(xmlhttp.responseText);
-                document.getElementById('testResponse').innerHTML = "Answer: " + jsonResponse.answer;
-
-                
-            }
-        }
-
-    };
-    xmlhttp.open("POST", "/API/api.php?action=test", true);
-    xmlhttp.setRequestHeader('Content-Type', 'application/json');
-    xmlhttp.send(JSON.stringify(jsonData));
-}
-
-
-function testApi(){
-    $("#test").click(function(){
-        clickTest();
-    });
-}
-
-testApi()
-
-
-
-
-
-//-----------------------------Login Form API Response Handler-------------------------------
+//-----------------------------Admin signup API Response Handler-------------------------------
 document.getElementById("LoginForm").addEventListener("submit", function(event) {
     event.preventDefault(); // Prevent the default form submission
             
     // Get form data
     var jsonData = {
         "username": document.getElementById("username").value,
+        "age": document.getElementById("age").value,
         "password": document.getElementById("password").value,
     };
     console.log(JSON.stringify(jsonData));

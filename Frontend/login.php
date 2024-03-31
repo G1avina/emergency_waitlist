@@ -25,7 +25,9 @@ Hello this is the login page
 <br><br>
 <div  id = "testResponse">Answer: </div>
 
-<br><br><br>
+<br><br>
+<div id = "error" class = "error"></div>
+<br>
 
 <div id = "LoginInterface" class = "LoginInterface">
 
@@ -36,9 +38,12 @@ Hello this is the login page
         <label for="password">Password: </label><br>
         <input type="text" id ="password">
         <br>
+        <br>
         <input type="submit" value="Submit">
     </form>
 </div>
+
+
 
 
 

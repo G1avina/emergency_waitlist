@@ -1,7 +1,7 @@
 <?php
 
 $host = 'localhost';
-$dbname = 'postgres';
+$dbname = 'emergency_waitlist';
 $username = 'cedricglavina';
 //$password = 'your_password'; no password on my user so I wont need this
 

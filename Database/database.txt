@@ -22,26 +22,47 @@ UPDATE test
 SET password = 'password';
 
 
-
+------------------------------------------------------------------
+brew install postgresql
+brew services start postgresql
+createdb emergency_waitlist
+psql -d emergency_waitlist
+inside the Database folde in database.php change the $username variable to your user (it should be either 'postgres' or if installed with homebrew it will be your user of your mac)
 
 
 
 CREATE TABLE admin (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(50),
-    age int
+    IDadmin VARCHAR(3) PRIMARY KEY,
+    nom VARCHAR(50),
+    prenom VARCHAR(50),
+    email VARCHAR(50),
+    age INT,
+    password VARCHAR(50)
 );
+
+INSERT INTO admin (IDadmin,nom,prenom,email,age,password) 
+VALUES
+    ('aaa','test','test','test@gmail.com',0,'test'),
+    ('111','Glavina','Cedric','ced@gmail.com',21,'test');
 
 
 CREATE TABLE patient (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(50),
-    age int
+    IDpatient SERIAL PRIMARY KEY,
+    nom VARCHAR(50),
+    prenom VARCHAR(50),
+    age INT,
+    blessure_description VARCHAR(400),
+    blessure_niveau INT CHECK (blessure_niveau >= 1 AND blessure_niveau <= 10),
+    temps_enregistrer TIME(0),
+    IDadmin VARCHAR(3),
+    FOREIGN KEY (IDadmin) REFERENCES admin(IDadmin)
 );
 
-
-CREATE TABLE registerd (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(50),
-    age int
-);
+INSERT INTO patient (nom,prenom,age,blessure_description,blessure_niveau,temps_enregistrer,IDadmin) 
+VALUES
+    ('patient1','patient1',0,'broken nose',2,CURRENT_TIME::TIME(0),'aaa'),
+    ('patient2','patient2',12,'fever',5,'12:30:00','aaa'),
+    ('patient3','patient3',27,'Here iam just testing a long description so yeah this guy is hurt he needs help omg testing helo wolrd!',10,'01:00:00','aaa'),
+    ('patient4','patient4',30,'double broken leg',9,'023:00:00','aaa'),
+    ('patient5','patient5',89,'this guy was walking in the street and was attacked by thugs he got mugged and then while he was on his way to the police station he got run over by a truck then some homeless guy set him on fire he was picked up by medics and they accedently dropped him on the floor',7,'01:00:00','aaa');
+    

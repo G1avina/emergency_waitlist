@@ -2,8 +2,6 @@
 session_start();
 
 if(isset($_SESSION['connected']) && $_SESSION['connected'] == 'admin') {
-    
-
 
 }else {
 header("Location:login.php");
@@ -20,7 +18,7 @@ exit;
 <head>
 <script src="../Asset/jquery-3.7.1.js"></script>
 
-<title>Admin Page</title>
+<title>Admin view pag</title>
 
 
 
@@ -29,17 +27,11 @@ exit;
 
 
 <body>
-Hello this is the admin homepage
+Hello this is the admin view page
 <br>
 username: <?php echo $_SESSION["username"] ?>
 <br>
-<a href="adminView.php">View the patient queue</a>
-<br>
-<a href="signupAdmin.php">Sign up an new admin</a>
-<br>
-<a href="signupPatient.php">Register a patient</a>
-<br>
-<a href="logout.php">logout</a>
+<a href="adminPage.php">back</a>
 
 
 </body>

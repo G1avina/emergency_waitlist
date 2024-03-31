@@ -10,3 +10,11 @@ function testGoBackLogin(){
 function logf($log){
     file_put_contents('logfile.txt', $log . PHP_EOL,FILE_APPEND);
 }
+
+function sendError($message){
+
+    $data = ["error" => $message];
+    // Bad
+    echo json_encode($data);
+
+}
