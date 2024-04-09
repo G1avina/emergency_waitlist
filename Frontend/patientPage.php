@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once('../Database/database.php');
+require_once('../Backend/sortQueue.php');
 
 if(isset($_SESSION['connected'])&& $_SESSION['connected'] == 'patient') {
 
@@ -32,7 +33,7 @@ if(isset($_SESSION['connected'])&& $_SESSION['connected'] == 'patient') {
 
 
 }else {
-header("Location:login.php");
+header("Location:logout.php");
 exit;
 }
 
@@ -45,6 +46,7 @@ exit;
 
 <head>
 <script src="../Asset/jquery-3.7.1.js"></script>
+<link rel="stylesheet" type="text/css" href="patientPage.css">
 
 <title>Patient Page</title>
 
@@ -55,27 +57,32 @@ exit;
 
 
 <body>
-Hello this is the patient homepage
+<div class = "container">
+<h1>Your are #: <?php echo $row["queue"]?> in queue</p></h1>
 <br>
-username: <?php echo $_SESSION["username"] ?>
+<div class="patient-info">
+<p>username: <?php echo $_SESSION["username"] ?></p>
 <br>
-prenom:  <?php echo $row["prenom"] ?>
+<p>prenom:  <?php echo $row["prenom"] ?></p>
 <br>
-nom:  <?php echo $row["nom"] ?>
+<p>nom:  <?php echo $row["nom"] ?></p>
 <br>
-age:  <?php echo $row["age"] ?>
+<p>age:  <?php echo $row["age"] ?></p>
 <br>
-blessure description:  <?php echo $row["blessure_description"] ?>
+<p>blessure description:  <?php echo $row["blessure_description"] ?></p>
 <br>
-blessure niveau:  <?php echo $row["blessure_niveau"] ?>
+<p>blessure niveau:  <?php echo $row["blessure_niveau"] ?></p>
 <br>
-temps enregistrer:  <?php echo $row["temps_enregistrer"] ?>
+<p>temps enregistrer:  <?php echo $row["temps_enregistrer"] ?></p>
 <br>
-idadmin:  <?php echo $row["idadmin"] ?>
+<p>idadmin:  <?php echo $row["idadmin"] ?></p>
 <br>
 <br>
 
+
 <a href="logout.php">logout</a>
+
+</div>
 
 
 </body>

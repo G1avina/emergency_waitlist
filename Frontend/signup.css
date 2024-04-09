@@ -1,0 +1,51 @@
+.error {
+    color: red;
+    font-weight: bold;
+  }
+  
+  /* Style for the form container */
+  .SignupInterface {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Style for form labels */
+  .SignupForm label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  /* Style for form inputs */
+  .SignupForm input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Style for submit button */
+  .SignupForm input[type="submit"] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Style for submit button hover effect */
+  .SignupForm input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  /* Style for form inputs on focus */
+  .SignupForm input[type="text"]:focus {
+    outline: none;
+    border-color: #719ece;
+  }

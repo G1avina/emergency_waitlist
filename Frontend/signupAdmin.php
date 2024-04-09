@@ -4,7 +4,7 @@ session_start();
 if(isset($_SESSION['connected']) && $_SESSION['connected'] == 'admin') {
 
 }else {
-header("Location:login.php");
+header("Location:logout.php");
 exit;
 }
 
@@ -18,6 +18,7 @@ exit;
 <head>
 <script src="../Asset/jquery-3.7.1.js"></script>
 <script src="signupAdmin.js" defer></script>
+<link rel="stylesheet" type="text/css" href="signup.css">
 
 <title>Signup admin page</title>
 
@@ -28,9 +29,6 @@ exit;
 
 
 <body>
-Hello this is the Signup admin page
-<br>
-username: <?php echo $_SESSION["username"] ?>
 <br>
 <a href="adminPage.php">back</a>
 
@@ -39,11 +37,20 @@ username: <?php echo $_SESSION["username"] ?>
 <div id = "error" class = "error"></div>
 <br>
 
-<div id = "AdminSignupInterface" class = "AdminSignupInterface">
+<div id = "AdminSignupInterface" class = "SignupInterface">
 
-    <form id = "AdminSignupForm"  class = "AdminSignupForm" action="/API/apiAdminSignup.php" method="post">
-        <label for="username">Username: </label><br>
-        <input type="text" id ="username">
+    <form id = "AdminSignupForm"  class = "SignupForm" action="/API/apiAdminSignup.php" method="post">
+        <label for="id">id: </label><br>
+        <input type="text" id ="id">
+        <br>
+        <label for="name">nom: </label><br>
+        <input type="text" id ="nom">
+        <br>
+        <label for="prenom">prenom: </label><br>
+        <input type="text" id ="prenom">
+        <br>
+        <label for="email">email: </label><br>
+        <input type="text" id ="email">
         <br>
         <label for="age">Age: </label><br>
         <input type="text" id ="age">

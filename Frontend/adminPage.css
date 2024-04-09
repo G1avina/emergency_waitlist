@@ -1,0 +1,20 @@
+a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    padding: 10px 0;
+  }
+  
+  /* Style for anchor links hover effect */
+  a:hover {
+    background-color: #f0f0f0;
+  }
+  
+  /* Style for specific anchor links */
+  a[href="adminView.php"],
+  a[href="signupAdmin.php"],
+  a[href="signupPatient.php"],
+  a[href="logout.php"] {
+    font-weight: bold;
+    color: #007bff; /* Change color as needed */
+  }

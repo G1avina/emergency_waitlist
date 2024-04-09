@@ -1,15 +1,14 @@
-//-----------------------------Admin signup API Response Handler-------------------------------
-document.getElementById("AdminSignupForm").addEventListener("submit", function(event) {
+//-----------------------------Patient signup API Response Handler-------------------------------
+document.getElementById("PatientSignupForm").addEventListener("submit", function(event) {
     event.preventDefault(); // Prevent the default form submission
             
     // Get form data
     var jsonData = {
-        "id": document.getElementById("id").value,
         "nom": document.getElementById("nom").value,
         "prenom": document.getElementById("prenom").value,
-        "email": document.getElementById("email").value,
         "age": document.getElementById("age").value,
-        "password": document.getElementById("password").value,
+        "desc": document.getElementById("desc").value,
+        "niv": document.getElementById("niv").value,
     };
     console.log(JSON.stringify(jsonData));
 

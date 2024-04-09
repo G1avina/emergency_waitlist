@@ -1,40 +1,19 @@
 
-
-No matching rows
-user or password field empty
-user or password field empty
-No matching rows
-No matching rows
+dcdpassword match
+admin inserted
+user field empty
+user field empty
+user field empty
 password match
 password match
-query error
-user or password field empty
-user or password field empty
-query error
-user or password field empty
-query error
-query error
+Patient deleted
+Patient deleted
 password match
-query error
-query error
-query error
-no password match
-no password match
 password match
-No matching rows
 No matching rows
 password match
 password match
 password match
 password match
-No matching rows
-No matching rows
-No matching rows
-No matching rows
-No matching rows
-No matching rows
-No matching rows
-No matching rows
 password match
-No matching rows
 password match

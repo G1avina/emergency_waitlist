@@ -27,7 +27,7 @@ brew install postgresql
 brew services start postgresql
 createdb emergency_waitlist
 psql -d emergency_waitlist
-inside the Database folde in database.php change the $username variable to your user (it should be either 'postgres' or if installed with homebrew it will be your user of your mac)
+inside the Database folder in database.php change the $username variable to your user (it should be either 'postgres' or if installed with homebrew it will be your user of your mac)
 
 
 
@@ -54,11 +54,12 @@ CREATE TABLE patient (
     blessure_description VARCHAR(400),
     blessure_niveau INT CHECK (blessure_niveau >= 1 AND blessure_niveau <= 10),
     temps_enregistrer TIME(0),
+    queue INT,
     IDadmin VARCHAR(3),
     FOREIGN KEY (IDadmin) REFERENCES admin(IDadmin)
 );
 
-INSERT INTO patient (nom,prenom,age,blessure_description,blessure_niveau,temps_enregistrer,IDadmin) 
+INSERT INTO patient (nom,prenom,age,blessure_description,blessure_niveau,temps_enregistrer,queue,IDadmin) 
 VALUES
     ('patient1','patient1',0,'broken nose',2,CURRENT_TIME::TIME(0),'aaa'),
     ('patient2','patient2',12,'fever',5,'12:30:00','aaa'),
@@ -66,3 +67,7 @@ VALUES
     ('patient4','patient4',30,'double broken leg',9,'023:00:00','aaa'),
     ('patient5','patient5',89,'this guy was walking in the street and was attacked by thugs he got mugged and then while he was on his way to the police station he got run over by a truck then some homeless guy set him on fire he was picked up by medics and they accedently dropped him on the floor',7,'01:00:00','aaa');
     
+
+
+    ALTER TABLE patient
+    ADD COLUMN queue int DEFAULT 30;

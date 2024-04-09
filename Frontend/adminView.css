@@ -1,0 +1,58 @@
+#patientdelete {
+    background-color: #dc3545; /* Red color */
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Style for the button hover effect */
+  #patientdelete:hover {
+    background-color: #c82333; /* Darker red on hover */
+  }
+
+  .info p {
+    margin: 5px 0; /* Spacing between items */
+  }
+  
+  /* Style for the button when focused */
+  #patientdelete:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #17a2b8; /* Example color, change as needed */
+  }
+
+
+  .info {
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px; /* Spacing between .info divs */
+  }
+  
+  /* Style for individual items within .info div */
+  .info p {
+    margin: 5px 0; /* Spacing between items */
+  }
+  
+  /* Style for the button within .info div */
+  .info #patientdelete {
+    background-color: #dc3545; /* Red color */
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px; /* Spacing between button and other items */
+  }
+  
+  /* Style for the button hover effect */
+  .info #patientdelete:hover {
+    background-color: #c82333; /* Darker red on hover */
+  }
+  
+  /* Style for the button when focused */
+  .info #patientdelete:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #17a2b8; /* Example color, change as needed */
+  }

@@ -9,6 +9,7 @@ session_start();
 <head>
 <script src="login.js" defer></script>
 <script src="../Asset/jquery-3.7.1.js"></script>
+<link rel="stylesheet" type="text/css" href="login.css">
 
 <title>index</title>
 
@@ -19,29 +20,27 @@ session_start();
 
 
 <body>
-Hello this is the login page
-<br><br>
-<button id="test" class = test>Test api and database</button>
-<br><br>
-<div  id = "testResponse">Answer: </div>
 
-<br><br>
-<div id = "error" class = "error"></div>
-<br>
+
 
 <div id = "LoginInterface" class = "LoginInterface">
+    <div class = "login">LOGIN</div>
+    <br>
 
     <form id = "LoginForm"  class = "LoginForm" action="/API/apiLogin.php" method="post">
         <label for="username">Username: </label><br>
-        <input type="text" id ="username">
+        <input type="text" id ="username" class = "in">
         <br>
         <label for="password">Password: </label><br>
-        <input type="text" id ="password">
+        <input type="text" id ="password" class = "in">
         <br>
         <br>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit" class = "butt">
+        <br>
+        <div id = "error" class = "error"></div>
     </form>
 </div>
+
 
 
 

@@ -16,23 +16,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Check if decoding was successful
         if ($data_array !== null) {
             // JSON data was successfully decoded
-            $id = $data_array['id'];
             $nom = $data_array['nom'];
             $prenom = $data_array['prenom'];
-            $email = $data_array['email'];
             $age = $data_array['age'];
-            $pass = $data_array['password'];
+            $desc = $data_array['desc'];
+            $niv = $data_array['niv'];
 
             //check if pass or user is empty
-            if($id == "" || strlen($id) !=3){
-                $data = ["error" => "Enter a valid id an id should be 3 character long"];
-                header("Content-Type: application/json");
-                http_response_code(200); // Bad
-                logf("user field empty");
-                echo json_encode($data);
-                exit;
-
-            }else if($nom == ""){
+            if($nom == ""){
                 $data = ["error" => "Enter a nom"];
                 header("Content-Type: application/json");
                 http_response_code(200); // Bad
@@ -48,14 +39,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 echo json_encode($data);
                 exit;
 
-            }else if($email == ""){
-                $data = ["error" => "Enter a email"];
-                header("Content-Type: application/json");
-                http_response_code(200); // Bad
-                logf("user field empty");
-                echo json_encode($data);
-                exit;
-
             }else if($age == "" || !ctype_digit($age) ){
                 $data = ["error" => "Enter a valid age"];
                 header("Content-Type: application/json");
@@ -63,11 +46,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 logf("age field empty");
                 echo json_encode($data);
                 exit;
-            }else if($pass == "" ){
-                $data = ["error" => "Enter a password"];
+            }else if($desc == ""){
+                $data = ["error" => "Enter a email"];
                 header("Content-Type: application/json");
                 http_response_code(200); // Bad
-                logf("password field empty");
+                logf("description field empty");
+                echo json_encode($data);
+                exit;
+            }else if($niv == "" || !ctype_digit($niv)||$niv<1||$niv>10){
+                $data = ["error" => "Enter a valide level it must be a number from 1 to 10"];
+                header("Content-Type: application/json");
+                http_response_code(200); // Bad
+                logf("niveau field empty");
                 echo json_encode($data);
                 exit;
             }
@@ -107,7 +97,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   
     //database test
-    $query = "SELECT * FROM admin WHERE idadmin = $1";
+   /* $query = "SELECT * FROM admin WHERE idadmin = $1";
     $result = pg_query_params($conn, $query, array($id));
 
     if ($result) {
@@ -135,15 +125,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         exit;
     }
-
-   $query = "INSERT INTO admin (IDadmin,nom,prenom,email,age,password) VALUES ($1,$2,$3,$4,$5,$6);";
-    $result = pg_query_params($conn, $query, array($id,$nom,$prenom,$email,$age,$pass));
+*/
+   $query = "INSERT INTO patient (nom,prenom,age,blessure_description,blessure_niveau,temps_enregistrer,,queue,IDadmin) VALUES ($1,$2,$3,$4,$5,CURRENT_TIME::TIME(0),99,$6);";
+    $result = pg_query_params($conn, $query, array($nom,$prenom,$age,$desc,$niv,$_SESSION["username"]));
    
 
     if ($result) {
-        logf("admin inserted");
+        logf("Patient inserted");
         pg_free_result($result);
-        $data = ["error" => "admin inserted"];
+        $data = ["error" => "patient inserted"];
         header("Content-Type: application/json");
         http_response_code(200); // Bad Request
         echo json_encode($data);

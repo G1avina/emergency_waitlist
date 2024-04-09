@@ -1,0 +1,106 @@
+/*body{
+
+    background-color: white;
+
+
+}
+
+
+.LoginInterface {
+    padding: 50px;  
+    display: flex; /* Use flexbox 
+    justify-content: center; /* Center content horizontally 
+    background-color: beige;
+    background-size: contain;    
+    /*align-items: center; /* Center content vertically 
+    height: 100vh; /* Adjust the height as needed 
+  }
+
+
+
+
+  .LoginForm {
+    height: 200px;
+    width: 500px;
+    padding: 20px;
+    border: 2px solid black;
+  }
+
+  .in{
+    width: 500px;
+    height: 30px;
+  }
+
+  .butt{
+    width: 50px;
+    height: 100px;
+    display: flex; 
+    justify-content: center;
+  }
+
+  .login{
+    display: flex; 
+    justify-content: center; 
+  }
+
+  .error{
+    color: red;
+  }*/
+
+  #LoginInterface {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style the "LOGIN" text */
+  .login {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  /* Style the form elements */
+  .LoginForm {
+    margin-top: 20px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  .in {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .butt {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .butt:hover {
+    background-color: #45a049;
+  }
+  
+  /* Style the error message */
+  .error {
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+
+
