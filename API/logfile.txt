@@ -20,3 +20,62 @@ password match
 password match
 password match
 password match
+password match
+user field empty
+password field empty
+age field empty
+admin inserted
+admin id already in
+user field empty
+user field empty
+age field empty
+description field empty
+niveau field empty
+niveau field empty
+niveau field empty
+niveau field empty
+query error
+{"error":"querry error"}
+query error
+{"error":"querry error"}
+query error
+{"error":"querry error"}
+query error
+{"error":"querry error"}
+query error
+{"error":"querry error"}
+query error
+{"error":"querry error"}
+query error
+{"error":"querry error"}
+query error
+{"error":"querry error"}
+query error
+{"error":"querry error"}
+query error
+{"error":"querry error"}
+query error
+{"error":"querry error"}
+query error
+{"error":"querry error"}
+query error
+{"error":"querry error"}
+query error
+{"error":"querry error"}
+query error
+{"error":"querry error"}
+query error
+{"error":"querry error"}
+query error
+{"error":"querry error"}
+query error
+{"error":"querry error"}
+query error
+{"error":"querry error"}
+query error
+{"error":"querry error"}
+query error
+{"error":"querry error"}
+query error
+{"error":"querry error"}
+Patient inserted

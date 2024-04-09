@@ -126,7 +126,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 */
-   $query = "INSERT INTO patient (nom,prenom,age,blessure_description,blessure_niveau,temps_enregistrer,,queue,IDadmin) VALUES ($1,$2,$3,$4,$5,CURRENT_TIME::TIME(0),99,$6);";
+   $query = "INSERT INTO patient (nom,prenom,age,blessure_description,blessure_niveau,temps_enregistrer,queue,IDadmin) VALUES ($1,$2,$3,$4,$5,CURRENT_TIME::TIME(0),99,$6);";
     $result = pg_query_params($conn, $query, array($nom,$prenom,$age,$desc,$niv,$_SESSION["username"]));
    
 
