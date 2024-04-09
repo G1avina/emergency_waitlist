@@ -1,5 +1,5 @@
 <?php 
-
+//THIS FILE HAS A FUNCTION THAT SORTS THE PATIIENT QUEUE IT USES TIME REGISTRED AND LEVEL OF INJURY TO ORDER THE QUEUE
 require_once('../Database/database.php');
 
 function sortPatient(){
@@ -25,16 +25,14 @@ function sortPatient(){
         $level = $row['blessure_niveau'];
         $id = $row['idpatient'];
 
-        // Convert PostgreSQL time string to DateTime object
         $starTime = DateTime::createFromFormat('H:i:s', $postStartTime);
 
-        // Get the current PHP time as a DateTime object
         $currentDateTime = new DateTime();
 
-        // Calculate the difference between the PostgreSQL time and current time
+
         $timeDifference = $currentDateTime->diff($starTime);
 
-        // Calculate the total number of seconds in the time difference
+  
         $totalSeconds = $timeDifference->s + $timeDifference->i * 60 + $timeDifference->h * 3600;
 
         $score = $totalSeconds * $level;

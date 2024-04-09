@@ -1,4 +1,5 @@
 <?php
+//THID FILE WAS USED FOR TESTING PURPOSES
 require_once('../Database/database.php');
 require_once('apiFunction.php');
 

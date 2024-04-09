@@ -1,4 +1,4 @@
-
+THIS FILE WAS USED FOR TEST PURPOSES
 dcdpassword match
 admin inserted
 user field empty
@@ -11,6 +11,9 @@ Patient deleted
 password match
 password match
 No matching rows
+password match
+password match
+password match
 password match
 password match
 password match

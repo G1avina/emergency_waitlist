@@ -29,14 +29,12 @@ document.getElementById("PatientSignupForm").addEventListener("submit", function
           } else {
             // If not redirected, handle the response as needed
             return response.json();
-            //console.log('Received response:', response);
           }
         })
 
     .then(data => { 
         // Handle the response data here
-        //let jsondata = JSON.stringify(data)
-        //console.log(jsondata);
+        
         document.getElementById("error").innerHTML = data.error;
     })
     .catch(error => {

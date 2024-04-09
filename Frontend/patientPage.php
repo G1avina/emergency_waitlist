@@ -1,4 +1,5 @@
 <?php
+//CHECK IF LOGGED IN
 session_start();
 require_once('../Database/database.php');
 require_once('../Backend/sortQueue.php');

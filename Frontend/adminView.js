@@ -6,7 +6,7 @@ document.querySelectorAll('#patientdelete').forEach(button => {
         let profileId = button.getAttribute('data-patient-id');
         console.log(profileId);
 
-        // Data to be sent in the request body (if any)
+        // Data to be sent in the request body
         const data = {
             id: profileId,
         };
@@ -15,11 +15,11 @@ document.querySelectorAll('#patientdelete').forEach(button => {
         fetch(url, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json' // Assuming you're sending JSON data
+                'Content-Type': 'application/json' 
             },
-            body: JSON.stringify(data) // Converting data to JSON string
+            body: JSON.stringify(data) 
         })
-        .then(response => response.json()) // Assuming server returns JSON response
+        .then(response => response.json())
 
 
          .then(response => {
@@ -30,7 +30,7 @@ document.querySelectorAll('#patientdelete').forEach(button => {
           } else if (!response.ok) {
             throw new Error('Network response was not ok');
           } else {
-            // If not redirected, handle the response as needed
+
             return response.json();
             //console.log('Received response:', response);
           }
@@ -38,8 +38,7 @@ document.querySelectorAll('#patientdelete').forEach(button => {
 
     .then(data => { 
         // Handle the response data here
-        //let jsondata = JSON.stringify(data)
-        //console.log(jsondata);
+
         location.reload();
         document.getElementById("error").innerHTML = data.error;
     })

@@ -1,7 +1,9 @@
 <?php
 require_once('../Database/database.php');
 
-
+//----------------
+//THIS FILE WAS USED FOR TESTING PURPOSES PLS IGNORE
+//-----------------
 
 //something fails in login
 function testGoBackLogin(){
@@ -22,7 +24,7 @@ function sendError($message){
 
 }
 
-
+/*
 function sortPatient(){
     global $conn;
 
@@ -73,7 +75,7 @@ function sortPatient(){
         $i = $i+1;
     }
 
-}
+}*/
 
 
 

@@ -103,10 +103,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 //------------------------------------------------------------------------------------------------------
-//need to insert stuff
 
   
-    //database test
+    //database
     $query = "SELECT * FROM admin WHERE idadmin = $1";
     $result = pg_query_params($conn, $query, array($id));
 
